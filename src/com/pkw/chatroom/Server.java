@@ -3,13 +3,22 @@ package com.pkw.chatroom;
 import java.io.IOException;
 import java.net.ServerSocket;
 
+import com.pkw.chatroom.networking.IpFinder;
+
 public abstract class Server {
 
 	private ServerSocket serverSocket;
+	private IpFinder ipFinder;
 	private boolean isRunning;
 
-	protected Server(int port) throws IOException {
+	protected Server(int port, IpFinder ipFinder) throws IOException {
 		serverSocket = new ServerSocket(port);
+		this.ipFinder = ipFinder;
+		isRunning = false;
+	}
+
+	protected final String getIp() {
+		return ipFinder.getIp();
 	}
 
 	protected final void start() {
@@ -20,7 +29,7 @@ public abstract class Server {
 			public void run() {
 				thisServer.run();
 			}
-		};
+		}.start();
 	}
 
 	public boolean isRunning() {
