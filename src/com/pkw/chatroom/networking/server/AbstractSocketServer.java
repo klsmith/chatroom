@@ -115,7 +115,7 @@ public abstract class AbstractSocketServer extends AbstractServer {
     }
 
     @Override
-    public final int port() {
+    public final int getPort() {
         return serverSocket.getLocalPort();
     }
 }

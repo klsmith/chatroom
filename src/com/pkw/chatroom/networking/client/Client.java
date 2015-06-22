@@ -4,6 +4,7 @@ import com.pkw.chatroom.networking.NetworkEntity;
 
 public interface Client extends NetworkEntity {
 
-    public void connectTo(String ipAddress, int port);
+    public void writeMessage(String message);
 
+    public void close();
 }

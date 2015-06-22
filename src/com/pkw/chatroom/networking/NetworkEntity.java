@@ -4,5 +4,5 @@ public interface NetworkEntity {
 
     public String ipAddress();
 
-    public int port();
+    public int getPort();
 }
