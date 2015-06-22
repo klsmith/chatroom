@@ -51,8 +51,8 @@ public abstract class AbstractSocketServer extends AbstractServer {
                     for (Socket clientSocket : clientSocketList) {
                         try {
                             Scanner scanner = new Scanner(clientSocket.getInputStream());
-                            while (scanner.hasNext()) {
-                                String message = scanner.next();
+                            while (scanner.hasNextLine()) {
+                                String message = scanner.nextLine();
                                 writeMessageIgnoreSocket(message, clientSocket);
                             }
                             scanner.close();
