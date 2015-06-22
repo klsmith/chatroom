@@ -7,13 +7,13 @@ public abstract class AbstractServer implements Server {
     private IpAddressFinder ipAddressFinder;
     private boolean running;
 
-    protected AbstractServer(int port, IpAddressFinder ipAddressFinder) {
+    protected AbstractServer(IpAddressFinder ipAddressFinder) {
         this.ipAddressFinder = ipAddressFinder;
         running = false;
     }
 
     @Override
-    public String getIpAddress() {
+    public final String getIpAddress() {
         return ipAddressFinder.getIpAddress();
     }
 
@@ -28,7 +28,7 @@ public abstract class AbstractServer implements Server {
     }
 
     @Override
-    public boolean isRunning() {
+    public final boolean isRunning() {
         return running;
     }
 

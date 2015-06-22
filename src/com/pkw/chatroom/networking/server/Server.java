@@ -8,6 +8,8 @@ public interface Server {
 
     public boolean isRunning();
 
+    public void writeMessage(String message);
+
     public String getIpAddress();
 
 }
