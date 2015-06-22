@@ -1,40 +1,13 @@
 package com.pkw.chatroom.networking.server;
 
-import java.io.IOException;
-import java.net.ServerSocket;
+public interface Server {
 
-import com.pkw.chatroom.networking.IpFinder;
+    public void start();
 
-public abstract class Server {
+    public void stop();
 
-	private ServerSocket serverSocket;
-	private IpFinder ipFinder;
-	private boolean isRunning;
+    public boolean isRunning();
 
-	protected Server(int port, IpFinder ipFinder) throws IOException {
-		serverSocket = new ServerSocket(port);
-		this.ipFinder = ipFinder;
-		isRunning = false;
-	}
+    public String getIpAddress();
 
-	protected final String getIp() {
-		return ipFinder.getIp();
-	}
-
-	protected final void start() {
-		isRunning = true;
-		final Server thisServer = this;
-		new Thread("Server Thread") {
-			@Override
-			public void run() {
-				thisServer.run();
-			}
-		}.start();
-	}
-
-	public boolean isRunning() {
-		return isRunning;
-	}
-
-	protected abstract void run();
 }
