@@ -1,20 +1,15 @@
 package com.pkw.chatroom.networking.server;
 
+import com.pkw.chatroom.networking.AbstractNetworkEntity;
 import com.pkw.chatroom.networking.ip.IpAddressFinder;
 
-public abstract class AbstractServer implements Server {
+public abstract class AbstractServer extends AbstractNetworkEntity implements Server {
 
-    private IpAddressFinder ipAddressFinder;
     private boolean running;
 
     protected AbstractServer(IpAddressFinder ipAddressFinder) {
-        this.ipAddressFinder = ipAddressFinder;
+        super(ipAddressFinder);
         running = false;
-    }
-
-    @Override
-    public final String ipAddress() {
-        return ipAddressFinder.getIpAddress();
     }
 
     @Override

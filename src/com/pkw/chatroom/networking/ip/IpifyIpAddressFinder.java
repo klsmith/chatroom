@@ -18,7 +18,7 @@ public class IpifyIpAddressFinder implements IpAddressFinder {
 	}
 
 	@Override
-	public String getIpAddress() {
+	public String findIpAddress() {
 		try {
 			URL ipify = new URL(IPIFY_API_URL);
 			BufferedReader in = new BufferedReader(new InputStreamReader(
