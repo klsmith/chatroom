@@ -1,13 +1,13 @@
 package com.pkw.chatroom.networking.server;
 
 import com.pkw.chatroom.networking.AbstractNetworkEntity;
-import com.pkw.chatroom.networking.ip.IpAddressFinder;
+import com.pkw.chatroom.networking.ip.ExternalIpAddressFinder;
 
 public abstract class AbstractServer extends AbstractNetworkEntity implements Server {
 
     private boolean running;
 
-    protected AbstractServer(IpAddressFinder ipAddressFinder) {
+    protected AbstractServer(ExternalIpAddressFinder ipAddressFinder) {
         super(ipAddressFinder);
         running = false;
     }

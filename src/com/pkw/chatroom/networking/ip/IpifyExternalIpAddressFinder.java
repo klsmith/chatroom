@@ -6,19 +6,19 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class IpifyIpAddressFinder implements IpAddressFinder {
+public class IpifyExternalIpAddressFinder implements ExternalIpAddressFinder {
 	private static final String IPIFY_API_URL = "http://api.ipify.org";
 	private static final String EXTERNAL_IP_ERROR_MESSAGE = "error finding external ip";
 
-	public static IpifyIpAddressFinder getInstance() {
-		return new IpifyIpAddressFinder();
+	public static IpifyExternalIpAddressFinder getInstance() {
+		return new IpifyExternalIpAddressFinder();
 	}
 
-	private IpifyIpAddressFinder() {
+	private IpifyExternalIpAddressFinder() {
 	}
 
 	@Override
-	public String findIpAddress() {
+	public String findExternalIpAddress() {
 		try {
 			URL ipify = new URL(IPIFY_API_URL);
 			BufferedReader in = new BufferedReader(new InputStreamReader(

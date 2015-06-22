@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import com.pkw.chatroom.networking.ip.IpAddressFinder;
+import com.pkw.chatroom.networking.ip.ExternalIpAddressFinder;
 
 public abstract class AbstractSocketServer extends AbstractServer {
 
@@ -17,7 +17,7 @@ public abstract class AbstractSocketServer extends AbstractServer {
     private Thread connectionListenerThread;
     private Thread clientInputListenerThread;
 
-    protected AbstractSocketServer(int port, IpAddressFinder ipAddressFinder) throws IOException {
+    protected AbstractSocketServer(int port, ExternalIpAddressFinder ipAddressFinder) throws IOException {
         super(ipAddressFinder);
         serverSocket = new ServerSocket(port);
         clientSocketList = new ArrayList<Socket>();

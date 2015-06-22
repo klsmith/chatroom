@@ -1,11 +1,11 @@
 package com.pkw.chatroom.networking.client;
 
 import com.pkw.chatroom.networking.AbstractNetworkEntity;
-import com.pkw.chatroom.networking.ip.IpAddressFinder;
+import com.pkw.chatroom.networking.ip.ExternalIpAddressFinder;
 
 public abstract class AbstractClient extends AbstractNetworkEntity implements Client {
 
-    protected AbstractClient(IpAddressFinder ipAddressFinder) {
+    protected AbstractClient(ExternalIpAddressFinder ipAddressFinder) {
         super(ipAddressFinder);
     }
 
