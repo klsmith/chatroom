@@ -1,4 +1,4 @@
-package com.pkw.chatroom;
+package com.pkw.chatroom.networking.server;
 
 import java.io.IOException;
 import java.net.ServerSocket;
