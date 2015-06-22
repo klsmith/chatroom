@@ -7,4 +7,6 @@ public interface Client extends NetworkEntity {
     public void writeMessage(String message);
 
     public void close();
+
+    public boolean isConnected();
 }

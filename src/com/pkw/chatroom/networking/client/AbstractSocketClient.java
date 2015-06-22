@@ -56,6 +56,11 @@ public class AbstractSocketClient extends AbstractClient {
     }
 
     @Override
+    public boolean isConnected() {
+        return clientSocket.isConnected();
+    }
+
+    @Override
     public void writeMessage(String message) {
         try {
             PrintStream output = new PrintStream(clientSocket.getOutputStream());

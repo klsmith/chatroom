@@ -11,7 +11,7 @@ public abstract class AbstractNetworkEntity implements NetworkEntity {
     }
 
     @Override
-    public String ipAddress() {
+    public String getIpAddress() {
         return ipAddressFinder.findExternalIpAddress();
     }
 
