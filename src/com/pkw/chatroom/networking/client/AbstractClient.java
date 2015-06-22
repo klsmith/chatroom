@@ -1,6 +1,5 @@
 package com.pkw.chatroom.networking.client;
 
-
-public class AbstractClient {
+public abstract class AbstractClient implements Client {
 
 }

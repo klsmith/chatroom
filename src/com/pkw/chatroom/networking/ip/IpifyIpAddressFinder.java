@@ -1,4 +1,4 @@
-package com.pkw.chatroom.networking;
+package com.pkw.chatroom.networking.ip;
 
 import java.io.BufferedReader;
 import java.io.IOException;

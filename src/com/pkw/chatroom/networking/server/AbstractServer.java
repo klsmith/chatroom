@@ -1,6 +1,6 @@
 package com.pkw.chatroom.networking.server;
 
-import com.pkw.chatroom.networking.IpAddressFinder;
+import com.pkw.chatroom.networking.ip.IpAddressFinder;
 
 public abstract class AbstractServer implements Server {
 
@@ -13,7 +13,7 @@ public abstract class AbstractServer implements Server {
     }
 
     @Override
-    public final String getIpAddress() {
+    public final String ipAddress() {
         return ipAddressFinder.getIpAddress();
     }
 

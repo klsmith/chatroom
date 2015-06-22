@@ -1,6 +1,8 @@
 package com.pkw.chatroom.networking.server;
 
-public interface Server {
+import com.pkw.chatroom.networking.NetworkEntity;
+
+public interface Server extends NetworkEntity {
 
     public void start();
 
@@ -9,7 +11,5 @@ public interface Server {
     public boolean isRunning();
 
     public void writeMessage(String message);
-
-    public String getIpAddress();
 
 }

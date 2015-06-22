@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import com.pkw.chatroom.networking.IpAddressFinder;
+import com.pkw.chatroom.networking.ip.IpAddressFinder;
 
 public abstract class AbstractSocketServer extends AbstractServer {
 
@@ -112,5 +112,10 @@ public abstract class AbstractSocketServer extends AbstractServer {
                 continue;
             }
         }
+    }
+
+    @Override
+    public final int port() {
+        return serverSocket.getLocalPort();
     }
 }
